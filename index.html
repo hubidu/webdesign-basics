@@ -3,8 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Wir bauen eine Website!</title>
+<!--
+    <link rel="stylesheet" type="text/css" href="http://marksheet.io/css/reset.css" />
+-->
+    <style>
+      body {
+        color: #555;
+      }
+      body {
+        margin: 0 auto;
+        width: 50em;
+      }
+
+      h1,
+      h2,
+      h3,
+      strong {
+        color: #333;
+      }
+    </style>
   </head>
   <body>
+    <!-- HEADER -->
     <header>
       <p>
         <a>
@@ -21,6 +41,7 @@
       </ul>
     </header>
 
+    <!-- MAIN -->
     <main>
       <aside>
         <h4>Inhalt</h4>
@@ -170,6 +191,92 @@
       </ul>
     </main>
 
+    <h2>Cascading Style Sheets</h2>
+
+    <p>
+      Mittlerweile sieht unsere Seite ziemlich hässlich aus. Bringen wir also ein bisschen <q>Style</q>,
+      d. h. Farbe, Schriftarten, Abstände und Positionierung rein.
+      Dazu verwenden wir <strong>CSS</strong>. CSS ist ein wenig wie <q>Malen mit Code</q>
+    </p>
+
+    <p>
+      CSS ist wie HTML eine Sprache, verwendet aber eine komplett andere Syntax. Um CSS Code in einer
+      HTML Datei unterzubringen verwenden wir das <b>style</b> Tag. Innerhalb dieses Tags schreiben wir
+      dann CSS.
+    </p>
+
+    <p>
+      CSS existiert, weil wir den <b>Inhalt</b> unserer Seite vom <b>Aussehen</b> trennen wollen.
+      Was damit alles möglich ist zeigt <a href="http://www.csszengarden.com/">CSS Zen Garden</a>
+    </p>
+
+
+    <h3>Textfarbe ändern</h3>
+    <p>
+      Lasst uns zunächst eine sehr subtile Änderung vornehmen und den Kontrast des
+      Textes etwas reduzieren.
+    </p>
+    <pre>
+      body {
+        color: #555;
+      }
+
+      h1,
+      h2,
+      h3,
+      strong {
+        color: #333;
+      }
+    </pre>
+
+    <h3>CSS Syntax: wer { was: wie; }</h3>
+    <p>
+      Oder auch <b>selector</b> { property: value }
+
+      <ul>
+        <li>der <b>selector</b> wählt das Ziel HTML Element aus (in obigem Beispiel <b>body</b>)</li>
+        <li><b>property</b> definiert welche Eigenschaft geändert werden soll (im Beispiel der Rand und die Breite des Elements)</li>
+        <li><b>value</b> definiert <em>wie</em> die Eigenschaft geändert wird bzw. welchen Wert sie erhält </li>
+      </ul>
+    </p>
+
+    <p>
+      Im obigen Beispiel ist der <b>selector</b> das <em>body</em> element, das
+      <b>property</b> ist <em>color</em> (die Schriftfarbe) und der <b>value</b>
+      ist <em>#555</em> (ein hexadecimal codierter Farbwert im RGB format).
+    </p>
+
+    <p>
+      Außerdem seht ihr im obigen Beispiel, dass ein <b>selector</b> auch aus
+      mehreren Tags bestehen kann. Diese werden dann durch Komma voneinander getrennt.
+      Damit lassen sich mehrere Tags auf einmal referenzieren.
+    </p>
+
+    <p>
+      Als Farbwert könnt ihr auch vordefinierte Werte wie <em>blue</em>, <em>green</em>, <em>gray</em> etc.
+      verwenden. Probiert das doch gleich mal aus!
+    </p>
+
+    <h3>Seite zentrieren</h3>
+    <p>
+      Da lange Textzeilen schwert zu lesen sind, wollen wir als nächstes die
+      Seitenbreite begrenzen und den Inhalt zentrieren.
+      Dazu geben wir dem <b>body</b> Tag eine feste Breite (<a href="https://www.w3.org/Style/Examples/007/units.en.html">em ist eine Längeneinheit</a>,
+      die sich mit der Schriftgröße anpasst). Außerdem setzen wir den linken und rechten Rand des Body Elements auf <em>auto</em>.
+      Damit zentriert sich die Seite automatisch.
+    </p>
+
+    <pre>
+      body {
+        margin: 0 auto;
+        width: 50em;
+      }
+    </pre>
+
+
+
+    <!-- FOOTER -->
+    <hr/>
     <footer>
       <p>building-a-website.io | Copyright 2016</p>
       <ul>
