@@ -5,132 +5,181 @@
     <title>Wir bauen eine Website!</title>
   </head>
   <body>
-    <h1>Wir bauen eine Website!</h1>
+    <header>
+      <p>
+        <a>
+          <img src="http://www.check24.de/" alt="CHECK24 Logo">
+        </a>
+        <em>Wir bauen eine Website</em>
+      </p>
+      <ul>
+        <li>
+          <a href="home.html">Home</a>
+          <a href="about.html">Über</a>
+          <a href="contact.html">Kontakt</a>
+        </li>
+      </ul>
+    </header>
 
-    <h2>Hyper Text Markup Language</h2>
+    <main>
+      <aside>
+        <h4>Inhalt</h4>
+        <ol>
+          <li>Hyper Text Markup Language</li>
+          <li>Block- und Inline-Elemente</li>
+          <li>Organization der Seite</li>
+        </ol>
+      </aside>
 
-    <dt>
-      <dt>HyperText</dt>
-      <dd>bedeutet wir benutzen den HTTP Teil des Internets</dd>
-      <dt>Markup</dt>
-      <dd>heisst wir annotieren den Text mit Schlüsselwörtern (sog. <b>"Tags"</b>)</dd>
-      <dt>Lanaugage</dt>
-      <dd>weil das Ergebnis sowohl für Menschen als auch für Computer lesbar ist</dd>
-    </dt>
+      <h1>Wir bauen eine Website!</h1>
 
-    <h3>Überschriften in verschiedenen Größen</h3>
-    <h1>Überschrift Heading 1</h1>
-    <h2>Überschrift Heading 2</h2>
-    <h3>Überschrift Heading 3</h3>
-    <h4>Überschrift Heading 4</h4>
-    <h5>Überschrift Heading 5</h5>
-    <h6>Überschrift Heading 6</h6>
+      <h2>Hyper Text Markup Language</h2>
 
-    <h3>Ein Absatz</h3>
-    <p>
-      Ein Absatz enthält normalerweise ein oder mehrere Sätze. Lorem ipsum dolor sit amet, consectetur ...
-    </p>
+      <dt>
+        <dt>HyperText</dt>
+        <dd>bedeutet wir benutzen den HTTP Teil des Internets</dd>
+        <dt>Markup</dt>
+        <dd>heisst wir annotieren den Text mit Schlüsselwörtern (sog. <b>"Tags"</b>)</dd>
+        <dt>Lanaugage</dt>
+        <dd>weil das Ergebnis sowohl für Menschen als auch für Computer lesbar ist</dd>
+      </dt>
 
-    <h3>Hyperlinks</h3>
-    <p>
-      Das ist ein Link oder <b>A</b>nchor Tag (daher auch das Hypertext, d. h. wir können auf andere Seiten im Internet verweisen):
-      <a href="http://wwww.lipsum.com">Was bedeutet eigentlich dieses Lorem ipsum?</a>
-    </p>
+      <h3>Überschriften in verschiedenen Größen</h3>
+      <h1>Überschrift Heading 1</h1>
+      <h2>Überschrift Heading 2</h2>
+      <h3>Überschrift Heading 3</h3>
+      <h4>Überschrift Heading 4</h4>
+      <h5>Überschrift Heading 5</h5>
+      <h6>Überschrift Heading 6</h6>
 
-    <h3>Bilder</h3>
-    <p>
-      Damit unsere <em>Website hübsch aussieht</em> wollen wir natürlich auch Bilder benutzen:
-      <img src="http://placekitten.com/g/200/300" alt="Ein süsses Kätzchen"/>
-      <img src="http://placekitten.com/g/200/300" width="100"/>
-      <img src="http://placekitten.com/g/200/300" height="50"/>
-    </p>
-    <p>
-      Wie ihr am <b>a</b> und <b>img</b> Tag seht können HTML Tags auch sog. Attribute haben(href, src, alt).
-      Damit kann man bei Bildern z. B. die Breite und Höhe kontrollieren (width, height).
-    </p>
+      <h3>Ein Absatz</h3>
+      <p>
+        Ein Absatz enthält normalerweise ein oder mehrere Sätze. Lorem ipsum dolor sit amet, consectetur ...
+      </p>
 
-    <h3>Listen</h3>
-    <p>
-      Häufig möchte man Dinge schön auflisten und dazu gibt es, naja eben Listenelemente (man beachte, dass die einzelnen Elemente linksbündig ausgerichtet sind):
+      <h3>Hyperlinks</h3>
+      <p>
+        Das ist ein Link oder <b>A</b>nchor Tag (daher auch das Hypertext, d. h. wir können auf andere Seiten im Internet verweisen):
+        <a href="http://wwww.lipsum.com">Was bedeutet eigentlich dieses Lorem ipsum?</a>
+      </p>
+
+      <h3>Bilder</h3>
+      <p>
+        Damit unsere <em>Website hübsch aussieht</em> wollen wir natürlich auch Bilder benutzen:
+        <img src="http://placekitten.com/g/200/300" alt="Ein süsses Kätzchen"/>
+        <img src="http://placekitten.com/g/200/300" width="100"/>
+        <img src="http://placekitten.com/g/200/300" height="50"/>
+      </p>
+      <p>
+        Wie ihr am <b>a</b> und <b>img</b> Tag seht können HTML Tags auch sog. Attribute haben(href, src, alt).
+        Damit kann man bei Bildern z. B. die Breite und Höhe kontrollieren (width, height).
+      </p>
+
+      <h3>Listen</h3>
+      <p>
+        Häufig möchte man Dinge schön auflisten und dazu gibt es, naja eben Listenelemente (man beachte, dass die einzelnen Elemente linksbündig ausgerichtet sind):
+
+        <ul>
+          <li>2 Eier</li>
+          <li>200g Mehl</li>
+          <li>250g Butter</li>
+          <li>1 Pkg Vanillezucker</li>
+          <li>... keine Ahnung was das werden soll</li>
+        </ul>
+      </p>
+
+      <h3>Kommentare</h3>
+      <p>
+        Weil wir letzten Endes HTML Code schreiben, gibt es auch die Möglichkeit Teile des Codes "auszukommentieren" und damit zu verhindern
+        , dass der Browser den Code interpretiert.
+        <!-- Das sollte z. B. nicht angezeigt werden -->
+      </p>
+
+      <h3>Der Elementbaum</h3>
+      <p>
+        Tags lassen sich übrigens auch <strong>schachteln</strong> (falls das noch nicht aufgefallen sein sollte). In diesem Fall
+        beinhaltet das p Tag ein strong Tag. Aufpassen muss man nur, dass Kindelemente (in diesem Fall strong), immer abgeschlossen
+        sein müssen, bevor das Elternelement (in diesem Fall p) geschlossen wird.
+      </p>
+      <p>Durch die Schachtelung entsteht eine baumartige Struktur (auch Elementtree genannt)</p>
+
+
+      <h2>Block und Inline Elemente</h2>
+
+      HTML Tags fallen in eine von 2 Kategorien:
+      <ul>
+        <li>Block (bspw. p, h1-h6, ul) oder</li>
+        <li>Inline-Elemente (img, a, em, b)</li>
+      </ul>
+
+      <h3>Block Elemente</h3>
+
+      erstrecken sich immer über die gesamte Seitenbreite und werden automatisch aufeinandergestapelt (wie Umzugskartons).
+      Sie werden nur so hoch wie ihr Inhalt.
+      Ein häufig benutztes Block Element ist <strong>div</strong> (was soviel heisst wie "mach ein Kästchen").
+
+      <div style="background-color: red">Rote Box</div>
+      <div style="background-color: green">Grüne Box</div>
+      <div style="background-color: blue">Blaue Box</div>
+
+      <h3>Inline Elemente</h3>
+      sind auch Kästchen, werden aber nur so breit wie ihr Inhalt und richten sich im Textfluss aneinander aus
+
+      <p>
+        <span style="border: 1px solid #ccc">Jedes</span>
+        <strong style="border: 1px solid #ccc">Wort</strong>
+        <em style="border: 1px solid #ccc">ist</em>
+        <b style="border: 1px solid #ccc">hier</b>
+        <span style="border: 1px solid #ccc">ein</span>
+        <span style="border: 1px solid #ccc">Inline Element</span>
+      </p>
+
+      <h3>Leerzeichen</h3>
+
+      <p>
+        Wie euch wahrscheinlich bereits aufgefallen ist, werden Leerzeichen im HTML Code vom Browser ignoriert:
+
+        Zeile 1
+
+        Zeile 2
+      </p>
+      <p>
+        Das hat damit zu tu, dass Leerzeichen und Tabulatoren zur Strukturierung des HTML Codes verwendet werden.
+        Ihr habt bestimmt schon bemerkt, dass verschachtelte Tags eingerückt werden.
+      </p>
+      <p>Um tatsächlich einen Zeilenumbruch zu erzwingen gibt es das <b>br</b> Tag</p>
+      <p>
+        Das obige Beispiel sieht dann wie folgt aus:
+        <br/>
+        Zeile 1
+        <br/>
+        Zeile 2
+        <br/>
+      </p>
+
+      <h2>Organization der Seite</h2>
+
+      Jede halbwegs größere Website besteht aus verschiedenen Teilen. Lasst uns nun
+      mit den folgenden Tags etwas Struktur in unsere Seite bringen.
 
       <ul>
-        <li>2 Eier</li>
-        <li>200g Mehl</li>
-        <li>250g Butter</li>
-        <li>1 Pkg Vanillezucker</li>
-        <li>... keine Ahnung was das werden soll</li>
+        <li>Einen <b>header</b> mit unserem Branding und der Navigation</li>
+        <li>Einen <b>main</b> content</li>
+        <li>Einen <b>sidebar</b> mit dem Inhaltsverzeichnis</li>
+        <li>Einen <b>footer</b> für das Impressum und zusätzlichen, weniger wichtigen Links</li>
       </ul>
-    </p>
+    </main>
 
-    <h3>Kommentare</h3>
-    <p>
-      Weil wir letzten Endes HTML Code schreiben, gibt es auch die Möglichkeit Teile des Codes "auszukommentieren" und damit zu verhindern
-      , dass der Browser den Code interpretiert.
-      <!-- Das sollte z. B. nicht angezeigt werden -->
-    </p>
-
-    <h3>Der Elementbaum</h3>
-    <p>
-      Tags lassen sich übrigens auch <strong>schachteln</strong> (falls das noch nicht aufgefallen sein sollte). In diesem Fall
-      beinhaltet das p Tag ein strong Tag. Aufpassen muss man nur, dass Kindelemente (in diesem Fall strong), immer abgeschlossen
-      sein müssen, bevor das Elternelement (in diesem Fall p) geschlossen wird.
-    </p>
-    <p>Durch die Schachtelung entsteht eine baumartige Struktur (auch Elementtree genannt)</p>
-
-
-    <h2>Block und Inline Elemente</h2>
-
-    HTML Tags fallen in eine von 2 Kategorien:
-    <ul>
-      <li>Block (bspw. p, h1-h6, ul) oder</li>
-      <li>Inline-Elemente (img, a, em, b)</li>
-    </ul>
-
-    <h3>Block Elemente</h3>
-
-    erstrecken sich immer über die gesamte Seitenbreite und werden automatisch aufeinandergestapelt (wie Umzugskartons).
-    Sie werden nur so hoch wie ihr Inhalt.
-    Ein häufig benutztes Block Element ist <strong>div</strong> (was soviel heisst wie "mach ein Kästchen").
-
-    <div style="background-color: red">Rote Box</div>
-    <div style="background-color: green">Grüne Box</div>
-    <div style="background-color: blue">Blaue Box</div>
-
-    <h3>Inline Elemente</h3>
-    sind auch Kästchen, werden aber nur so breit wie ihr Inhalt und richten sich im Textfluss aneinander aus
-
-    <p>
-      <span style="border: 1px solid #ccc">Jedes</span>
-      <strong style="border: 1px solid #ccc">Wort</strong>
-      <em style="border: 1px solid #ccc">ist</em>
-      <b style="border: 1px solid #ccc">hier</b>
-      <span style="border: 1px solid #ccc">ein</span>
-      <span style="border: 1px solid #ccc">Inline Element</span>
-    </p>
-
-    <h3>Leerzeichen</h3>
-
-    <p>
-      Wie euch wahrscheinlich bereits aufgefallen ist, werden Leerzeichen im HTML Code vom Browser ignoriert:
-
-      Zeile 1
-
-      Zeile 2
-    </p>
-    <p>
-      Das hat damit zu tu, dass Leerzeichen und Tabulatoren zur Strukturierung des HTML Codes verwendet werden.
-      Ihr habt bestimmt schon bemerkt, dass verschachtelte Tags eingerückt werden.
-    </p>
-    <p>Um tatsächlich einen Zeilenumbruch zu erzwingen gibt es das <b>br</b> Tag</p>
-    <p>
-      Das obige Beispiel sieht dann wie folgt aus:
-      <br/>
-      Zeile 1
-      <br/>
-      Zeile 2
-      <br/>
-    </p>
-
-
+    <footer>
+      <p>building-a-website.io | Copyright 2016</p>
+      <ul>
+        <li>
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="terms-of-use.html">Terms of use</a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
