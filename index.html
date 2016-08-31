@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="http://marksheet.io/css/reset.css" />
 -->
     <style>
+      @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
       body {
         color: #555;
       }
@@ -48,6 +50,36 @@
         padding: 1em;
       }
 
+      /* 06 Primary color */
+      a {
+        color: #005ea8;
+      }
+
+      /* 07 Secondary colors */
+      body {
+        background: white;
+        color: #575757;
+      }
+
+      code,
+      pre {
+        background: #f5f7f9;
+        border-bottom: 1px solid #d8dee9;
+        color: #a7adba;
+        -moz-font-smoothing: grayscale;
+        -webkit-font-smoothing: initial;
+      }
+
+      pre {
+        border-left: 2px solid #1670b7;
+      }
+
+      /* 08 Custom Font */
+      body {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      }
+
+
     </style>
   </head>
   <body>
@@ -76,6 +108,7 @@
           <li>Hyper Text Markup Language</li>
           <li>Block- und Inline-Elemente</li>
           <li>Organization der Seite</li>
+          <li>Cascading Style Sheets</li>
         </ol>
       </aside>
 
@@ -369,6 +402,20 @@
 
       pre {
         padding: 1em;
+      }
+    </pre>
+
+    <h3>Custom Font</h3>
+    <p>
+      Und weil Text so wichtig ist, verwenden wir gleich noch einen sog. <q>Custom Font</q> (Roboto)
+      , weil der einfach schöner aussieht.
+    </p>
+
+    <pre>
+      @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+      body {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
       }
     </pre>
 
