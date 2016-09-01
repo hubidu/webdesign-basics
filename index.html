@@ -6,85 +6,8 @@
 <!--
     <link rel="stylesheet" type="text/css" href="http://marksheet.io/css/reset.css" />
 -->
-    <style>
-      @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
-      body {
-        color: #555;
-      }
-      body {
-        margin: 0 auto;
-        width: 50em;
-      }
-      body {
-        font-family: "Helvetica", "Arial", sans-serif;
-      }
-      body {
-        line-height: 1.5;
-        padding: 4em 1em;
-      }
-
-      h1,
-      h2,
-      h3 {
-        margin-top: 1em;
-        padding-top: 1em;
-      }
-
-      h1,
-      h2,
-      h3,
-      strong {
-        color: #333;
-      }
-
-      code,
-      pre {
-        background: #eee;
-      }
-      code {
-        padding: 2px 4px;
-        vertical-align: text-bottom;
-      }
-      pre {
-        padding: 1em;
-      }
-
-      /* 06 Primary color */
-      a {
-        color: #005ea8;
-      }
-
-      /* 07 Secondary colors */
-      body {
-        background: white;
-        color: #575757;
-      }
-
-      code,
-      pre {
-        background: #f5f7f9;
-        border-bottom: 1px solid #d8dee9;
-        color: #a7adba;
-        -moz-font-smoothing: grayscale;
-        -webkit-font-smoothing: initial;
-      }
-
-      pre {
-        border-left: 2px solid #1670b7;
-      }
-
-      /* 08 Custom Font */
-      body {
-        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-      }
-      h1,
-      h2,
-      h3 {
-        font-weight: 500;
-      }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
     <!-- HEADER -->
@@ -423,13 +346,46 @@
       }
     </pre>
 
-    <p>Sieht noch ein bisschen klobig aus. Deswegen wählen wir noch eine schlankere Variante für die Überschriften.</p>
+    <p>Sieht noch ein bisschen klobig aus. Deswegen wählen wir noch eine schlankere Variante
+      (siehe auch <a href="https://css-tricks.com/almanac/properties/f/font-weight/">font-weight</a>)
+      für die Überschriften.
+    </p>
     <pre>
       h1,
       h2,
       h3 {
         font-weight: 500;
       }
+    </pre>
+
+    <h3>
+      CSS
+      Refactoring
+    </h3>
+
+    <blockquote>
+      <p>
+        <a href="http://refactoring.com/">
+          Refactoring
+        </a>
+        is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.
+      </p>
+    </blockquote>
+
+    <p>
+      Häh? Auf Deutsch: Unsere HTML Datei ist mittlerweile schon recht groß geworden. Lasst uns deshalb den HTML und CSS Code
+      voneinander trennen (ist ja auch die eigenliche Absicht von CSS) und das CSS
+      in eine eigene Datei packen.
+    </p>
+
+    <p>
+      Legt dazu jetzt bitte eine neue Datei <b>styles.css</b> an und kopiert den
+      CSS Code hinein.
+      Dann referenzieren wir die CSS Datei mittels folgendem <b>link</b> Tag:
+    </p>
+
+    <pre>
+      &lt;link rel="stylesheet" type="text/css" href="styles.css" /&gt;
     </pre>
 
     <!-- FOOTER -->
