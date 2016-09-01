@@ -5,7 +5,7 @@ body {
 }
 body {
   margin: 0 auto;
-  width: 50em;
+  max-width: 50em;
 }
 body {
   font-family: "Helvetica", "Arial", sans-serif;
@@ -39,6 +39,20 @@ code {
 }
 pre {
   padding: 1em;
+}
+dt {
+  font-weight: bold;
+}
+
+.note {
+  display: block;
+  margin: 1em 0;
+  padding: 15px 10px;
+  padding-left: 3em;
+  background-image: url("info-icon.png");
+  background-color: #88C9F0;
+  background-repeat: no-repeat;
+  color: black;
 }
 
 /* 06 Primary color */
@@ -93,4 +107,102 @@ blockquote:before {
 }
 blockquote p {
   display: inline;
+}
+
+/* 10 Change header background */
+body {
+  padding: 0;
+  margin: 0;
+  max-width: none;
+}
+main {
+  margin: 0 auto;
+  max-width: 50em;
+}
+header {
+  background-color: #263d36;
+  background-image: url("https://hd.unsplash.com/photo-1470214304380-aadaedcfff84");
+  background-size: cover;
+  line-height: 1.2;
+  padding: 8vw 2em;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  margin-bottom: 1em;
+  padding: 0;
+  color: white;
+  font-size: 5em;
+  font-weight: 300;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+header a {
+  padding: 1em 2em;
+  color: #fafafa;
+  border: 3px solid #005ea8;
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: none 200ms ease-out;
+  transition-property: color, background;
+}
+header a:hover {
+  background-color: #005ea8;
+  color: white;
+}
+header #logo {
+  display: inline-block;
+  padding: 1em;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  color: #333;
+  background-color: #fafafa;
+  font-weight: 300;
+  font-size: 0.6em;
+  border: 5px solid #fafafa;
+  border-radius: 50%;
+}
+header #check24-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+}
+footer {
+  padding: 1em;
+  color: white;
+  background-color: #005ea8;
+  max-width: none;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+}
+
+footer ul, footer li {
+ display: inline;
+ margin: 0;
+ padding: 0;
+}
+
+footer ul {
+  width: 20em;
+  margin: 0 auto;
+}
+
+footer ul li:after {
+ content: "|";
+ }
+
+footer ul li:last-child:after {
+ content: " ";
+}
+
+aside {
+  float: right;
+  padding: 5px;
+  width: 20em;
+  background-color: #eaeaea;
 }
