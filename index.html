@@ -33,8 +33,9 @@
         <ol>
           <li>Hyper Text Markup Language</li>
           <li>Block- und Inline-Elemente</li>
-          <li>Organization der Seite</li>
-          <li>Cascading Style Sheets</li>
+          <li>Organisation der Seite</li>
+          <li>CSS Grundlagen</li>
+          <li>CSS Effekte</li>
         </ol>
       </aside>
 
@@ -45,7 +46,7 @@
         <dd>bedeutet wir benutzen den HTTP Teil des Internets</dd>
         <dt>Markup</dt>
         <dd>heisst wir annotieren den Text mit Schlüsselwörtern (sog. <b>"Tags"</b>)</dd>
-        <dt>Lanaugage</dt>
+        <dt>Language</dt>
         <dd>weil das Ergebnis sowohl für Menschen als auch für Computer lesbar ist</dd>
       </dt>
 
@@ -59,21 +60,32 @@
 
       <h3>Ein Absatz</h3>
       <p>
-        Ein Absatz enthält normalerweise ein oder mehrere Sätze. Lorem ipsum dolor sit amet, consectetur ...
+        Ein Absatz enthält normalerweise ein oder mehrere Sätze. Ähnlich wie
+        in einem Textverarbeitungsprogramm können wir einzelne Wörter auch
+        <b>fett</b>, <em>hervorgehoben</em>, <small>kleiner</small>, <sup>hoch-</sup>
+        oder <sub>tiefgestellt</sub> darstellen.
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
       </p>
+
+      <span class="note">
+        Was bedeutet eigentlich dieses <a href="http://wwww.lipsum.com">Lorem ipsum?</a>
+      </span>
 
       <h3>Hyperlinks</h3>
       <p>
-        Das ist ein Link oder <b>A</b>nchor Tag (daher auch das Hypertext, d. h. wir können auf andere Seiten im Internet verweisen):
-        <a href="http://wwww.lipsum.com">Was bedeutet eigentlich dieses Lorem ipsum?</a>
+        Das ist ein (Hyper-)Link oder <b>A</b>nchor Tag (daher auch der Name Hypertext Transfer Protocol = HTTP).
+        Damit können wir auf andere Seiten im Internet, aber auch an andere Stellen
+        im Dokument verweisen und den Benutzer dorthin springen lassen.
+        Links werden auch gerne verwendet, um Navigationselemente oder Buttons zu implementieren.
       </p>
 
       <h3>Bilder</h3>
       <p>
         Damit unsere <em>Website hübsch aussieht</em> wollen wir natürlich auch Bilder benutzen:
-        <img src="http://placekitten.com/g/200/300" alt="Ein süsses Kätzchen"/>
-        <img src="http://placekitten.com/g/200/300" width="100"/>
-        <img src="http://placekitten.com/g/200/300" height="50"/>
+        <img class="center" src="http://placekitten.com/g/200/300" alt="Ein süsses Kätzchen"/>
+        <img class="center" src="http://placekitten.com/g/200/300" width="100"/>
+        <img class="center" src="http://placekitten.com/g/200/300" height="50"/>
       </p>
       <p>
         Wie ihr am <b>a</b> und <b>img</b> Tag seht können HTML Tags auch sog. Attribute haben(href, src, alt).
@@ -127,6 +139,11 @@
       <div style="background-color: green">Grüne Box</div>
       <div style="background-color: blue">Blaue Box</div>
 
+      <p>
+        <a href="http://marksheet.io/css-the-flow.html">Hier</a> könnt ihr sehen wie Elemente miteinander interagieren, wenn sie ihre Größe
+        verändern.
+      </p>
+
       <h3>Inline Elemente</h3>
       sind auch Kästchen, werden aber nur so breit wie ihr Inhalt und richten sich im Textfluss aneinander aus
 
@@ -137,6 +154,12 @@
         <b style="border: 1px solid #ccc">hier</b>
         <span style="border: 1px solid #ccc">ein</span>
         <span style="border: 1px solid #ccc">Inline Element</span>
+      </p>
+
+      <p>
+        Ihr könnt euch Inline Elemente ein bisschen wie die beweglichen Lettern beim Buchdruck
+        vorstellen.
+        <img class="center" src="http://www.erich-hat-jetzt-zeit.de/Mein%20Berufsleben/Gutenberg/Bilder/Satz.jpg" alt="Buchdruck">
       </p>
 
       <h3>Leerzeichen</h3>
@@ -162,7 +185,7 @@
         <br/>
       </p>
 
-      <h2>Organization der Seite</h2>
+      <h2>Organisation der Seite</h2>
 
       Jede halbwegs größere Website besteht aus verschiedenen Teilen. Lasst uns nun
       mit den folgenden Tags etwas Struktur in unsere Seite bringen.
@@ -211,6 +234,40 @@
         color: #333;
       }
     </pre>
+
+    <h4>Und so funktioniert's</h4>
+    <ol>
+      <li>
+        Wir sagen bei welchen HTML Elementen (<b>body</b>, <b>h1</b>, <b>h2</b>, <b>h3</b>, <b>strong</b>)
+        wir die Farbe ändern wollen.
+      </li>
+      <li>
+        Mit der CSS <b>color</b> Eigenschaft setzen wir diese dann auf den gewünschten Wert.
+        Der Farbwert wird dabei im <a href="https://www.rgbworld.com/color.html">RGB</a> Format angegeben.
+      </li>
+    </ol>
+
+    <span class="note">
+      <strong>Was bedeutet #555?</strong>
+      <ul>
+        <li>
+          Das <b>#</b> sagt, dass wir den Farbwert hexadecimal angeben.
+        </li>
+        <li>
+          #555 ist eine Abkürzung für #555555.
+        </li>
+        <li>
+          Je ein Ziffernpaar steht für den Rot, Grün und Blau Wert.
+          Wir setzen also Rot, Grün und Blau jeweils auf den Hexadecimalwert 55 (in Decimalschreibweise 85).
+          Wenn Rot, Grün, Blau den gleichen Wert erhalten, bekommen wir immer einen Grauton.
+        </li>
+        <li>
+          Je größer die Zahl ist desto heller ist der Grauton. #555 und #333 sind also eher dunkle Töne.
+          Probiert ruhig mal eure eigenen Grautöne oder verwendet eine der anderen
+          <a href="http://colours.neilorangepeel.com/">Standardfarben</a>
+        </li>
+      </ul>
+    </span>
 
     <h3>CSS Syntax: wer { was: wie; }</h3>
     <p>
@@ -277,6 +334,7 @@
 
     <p>Lasst uns das gleich mal ausprobieren:</p>
 
+    <h4>Block Elemente mit und ohne Breite</h4>
     <div style="background-color: red;">
       Eine rote Box. Block Elemente gehen über die ganze verfügbare Breite (ihr erinnert euch).
     </div>
@@ -284,19 +342,26 @@
       Eine rote Box mit Breite 100px und einem Padding von 5px
     </div>
 
-    <p>Boxen nebeneinander ohne Rand</p>
-    <div style="display: inline-block; margin-right: 0px; width: 100px; background-color: white; border: 3px solid gray; padding: 5px">
+    <h4>Boxen nebeneinander ohne Rand</h4>
+    <div style="display: inline-block; box-sizing: border-box; margin: 0; width: 100px; background-color: white; border: 3px solid gray; padding: 5px">
       Erste Box mit margin-right 10px
     </div>
-    <div style="display: inline-block; margin-right: 0px; width: 100px; background-color: white; border: 3px solid gray; padding: 5px">
+    <div style="display: inline-block; box-sizing: border-box; margin: 0; width: 100px; background-color: white; border: 3px solid gray; padding: 5px">
       Zeite Box mit margin-right 10px
     </div>
-    <div style="display: inline-block; margin-right: 0px; width: 100px; background-color: white; border: 3px solid gray; padding: 5px">
+    <div style="display: inline-block; box-sizing: border-box; margin: 0; width: 100px; background-color: white; border: 3px solid gray; padding: 5px">
       Dritte Box mit margin-right 10px
     </div>
 
+    <span class="note">
+      Warum berühren sich die Boxen dann nicht, wenn sie keinen Rand haben? Weil in diesem Fall Leerzeichen doch eine Rolle spielen
+      (da die Elemente <b>inline-block</b> sind). Siehe auch
+      <a href="https://css-tricks.com/fighting-the-space-between-inline-block-elements/">
+        Fighting the Space Between Inline Block Elements
+      </a>
+    </span>
 
-    <p>Boxen nebeneinander, der Rand (margin) hält sie auseinander</p>
+    <h4>Boxen nebeneinander, der Rand (margin) hält sie auseinander</h4>
     <div style="display: inline-block; margin-right: 10px; width: 100px; background-color: white; border: 3px solid gray; padding: 5px">
       Erste Box mit margin-right 10px
     </div>
@@ -383,6 +448,52 @@
       }
     </pre>
 
+    <h3>Bilder</h3>
+    <p>
+      Unsere Bilder stehen im Moment noch ein wenig unmotiviert in der
+      Gegend rum. Es sieht ordentlicher aus, wenn wir sie schön untereinander
+      und mittig anordnen könnten.
+    </p>
+
+    <pre>
+      img.center {
+        display: block;
+        padding:1px;
+        border:1px solid #aaa;
+        margin: 0 auto;
+      }
+    </pre>
+
+    <h4>Und so funktioniert's</h4>
+    <ol>
+      <li>
+        Neu ist der <b>img.center</b> Selector. Da wir nicht grundsätzlich
+        alle Images auf unserer Seite zentrieren wollen, sondern nur ausgewählte,
+        verwenden wir eine sog. <a href="https://css-tricks.com/almanac/selectors/c/class/">CSS Klasse</a>.
+        D. h. wir versehen alle img Elemente mit einem zusätzlichen Namen bzw. Kategorie (eben der Klasse)
+        und können sie dadurch gezielt ansprechen.
+        <b>img.center</b> selektiert also nur alle img Elemente der Klasse center, d. h. alle Elemente mit
+        folgendem HTML:
+
+        <pre>
+          &lt;img class="center" ... /&gt;
+        </pre>
+      </li>
+      <li>
+        Wie ihr wisst sind <b>img</b> Elemente von Natur aus <em>inline</em>,
+        fliessen also mit dem Text mit. Daher machen wir sie zunächst zu
+        Block Elementen, damit sie sich vom Text und auch gegeneinander
+        absetzen können (sprich wir wollen sie aufeinander stapeln).
+      </li>
+      <li>
+        Den Rest kennt ihr bereits: Wir fügen ein bisschen padding und border
+        hinzu und zentrieren das Element mit dem <b>margin: 0 auto</b> Trick.
+      </li>
+    </ol>
+
+    <!-- CSS EFFEKTE -->
+    <h2>Effekte mit CSS</h2>
+
     <h3>
       CSS
       Refactoring
@@ -402,6 +513,11 @@
       voneinander trennen (ist ja auch die eigenliche Absicht von CSS) und das CSS
       in eine eigene Datei packen.
     </p>
+
+    <span class="note">
+      Wenn ihr mit Software-Entwicklern zu tun habt, werdet ihr mit dem Begriff öfter
+      konfrontiert werden. Jetzt könnt ihr euch hoffentlich auch etwas darunter vorstellen.
+    </span>
 
     <p>
       Legt dazu jetzt bitte eine neue Datei <b>styles.css</b> an und kopiert den
@@ -533,8 +649,62 @@
       aus
     </span>
 
+    <h3>Header Navigation</h3>
 
+    <p>
+      Nehmen wir uns jetzt die Navigationslinks im Header vor und versuchen
+      diese ansprechend zu gestalten.
+    </p>
 
+    <pre>
+      header a {
+        padding: 1em 2em;
+        color: #fafafa;
+        border: 3px solid #005ea8;
+        border-radius: 100px;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: none 200ms ease-out;
+        transition-property: color, background;
+      }
+      header a:hover {
+        background-color: #005ea8;
+        color: white;
+      }
+    </pre>
+
+    <h4>Und so funktioniert's</h4>
+    <ol>
+      <li>Wie schon für den Titel verwenden wir eine helle Schriftfarbe zur besseren Lesbarkeit</li>
+      <li><b>text-decoration: none</b> entfernt die Unterstreichung bei Links im Header-Bereich</li>
+      <li><b>text-transform: uppercase</b> Transformiert den Link Text zu Großbuchstaben</li>
+      <li>
+        Um das ganze optisch aufzupeppen umringeln wir die einzelnen Links. Das erreichen
+        wir mit <b>border: 3px solid #005ea8</b>. <b>border-radius</b> rundet dann noch
+        die Ecken ab.
+      </li>
+      <li>
+        Jetzt wirds interessant: Wir definieren einen Überblendeffekt! <b>transition</b>
+        definiert wie lange die Animation dauert, <b>transition-property</b> legt fest,
+        auf welche CSS Eigenschaften die Animation wirkt. In diesem Fall animieren wir
+        die Eigenschaften Textfarbe und Hintergrundfarbe.
+      </li>
+      <li>
+        Bis hierhin werdet ihr allerdings noch keinen Effekt feststellen können.
+        Der entfaltet erst mit <b>header a:hover</b> Regel seine Wirkung.
+        Bei <b>a:hover</b> handelt es sich wiedereinmal um einen neuen Selector.
+        <b>:hover</b> ist dabei eine sogenannte <a href="https://css-tricks.com/almanac/selectors/h/hover/">Pseudoklasse</a>
+        und bewirkt, dass der Selector nur dann wirksam ist, wenn man mit der
+        Maus über den Link fährt. Wenn das passiert, tauschen wir Text- und Hintergrundfarbe
+        und der Überblendeffekt startet.
+      </li>
+    </ol>
+    <span class="note">
+      Experimentiert mit verschiedenen <b>border</b> Dicken, Farben und Radien.
+    </span>
+    <span class="note">
+      Experimentiert mit verschiedenen Transitionseigenschaften
+    </span>
 
 
   </main>
