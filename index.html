@@ -6,7 +6,6 @@
 <!--
     <link rel="stylesheet" type="text/css" href="http://marksheet.io/css/reset.css" />
 -->
-
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
@@ -25,6 +24,11 @@
       <a href="about.html">Über</a>
       <a href="contact.html">Kontakt</a>
     </header>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">Über</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
 
     <!-- MAIN -->
     <main>
@@ -36,6 +40,7 @@
           <li>Organisation der Seite</li>
           <li>CSS Grundlagen</li>
           <li>CSS Effekte</li>
+          <li>Techniken mit Javascript</li>
         </ol>
       </aside>
 
@@ -706,6 +711,164 @@
       Experimentiert mit verschiedenen Transitionseigenschaften
     </span>
 
+    <h2>Techniken mit Javascript</h2>
+    <p>
+      Lasst uns zum Abschluß noch ein wenig in Javascript hineinschnuppern.
+      Javascript fängt an, wo CSS aufhört, sprich z. B. bei visuellen Effekten
+      , die sich mit CSS allein nicht mehr realisieren lassen. Das war auch der Ursprung
+      einer der bekanntesten und meist genutzen Javascript Bibliotheken der letzten Jahre: <a href="https://code.jquery.com/">jQuery</a>
+    </p>
+
+    <p>
+      Javascript kann aber mittlerweile
+      <a href="https://medium.com/javascript-and-opinions/state-of-the-art-javascript-in-2016-ab67fc68eb0b#.cubwwongo">
+        unendlich viel mehr
+      </a> als nur die Seite ein wenig aufhübschen und ist heute neben Java die am
+      weitesten verbreitete Programmiersprache.
+    </p>
+
+    <p>
+      Einen nützlichen Effekt, den ihr bestimmt schon gesehen habt (siehe bspw. <a href="https://medium.com">hier</a>)
+      ist der <strong>Sticky Navigation</strong> oder auch <strong>Sticky Page Header</strong> Effekt.
+      Der heisst so, weil beim Scrollen auf der Seite, der Seiten-Header verkleinert und
+      an den oberen Rand der Seite geheftet wird. Damit bleibt die Navigation für
+      den Benutzer jederzeit erreichbar, der Inhalt der Seite gewinnt gleichzeitig
+      maximalen Raum. Besonders praktisch ist das für die Benutzer von Mobilgeräten,
+      da diese naturgemäß scrollen müssen, um den Content ganz zu erfassen.
+    </p>
+
+    <span class="note">
+      Schaut euch den Effekt zunächst an und versucht herauszufinden, wie man ihn
+      realisieren könnte.
+    </span>
+
+    <p>
+      Der Effekt ist eine Kombination aus CSS Techniken, die ihr bereits kennengelernt habt
+       und einem kleinen Schnipsel Javascript Code.
+
+      <ol>
+        <li>
+          Wie ihr bestimmt sofort gemerkt habt gibt es einen Punkt, an dem der
+          Effekt getriggert wird: Nämlich in dem Augenblick an dem beim Scrollen
+          das Logo aus dem Blickfeld verschwindet.
+          Wir brauchen also eine Möglichkeit, um Erkennen zu können ob und wie
+          weit der Benutzer unserer Seite gescrollt hat. Dazu stellen alle
+          Browser
+          <a href="http://stackoverflow.com/questions/4416317/what-is-the-dom-and-bom-in-javascript">
+            DOM und BOM
+          </a> zur Verfügung, letztlich eine Schnittstelle mit dem man den
+          Browser steuern kann und Zugriff auf HTML und CSS Code erhält. Und wie spricht man diese Schnittstelle an? Genau: mit <b>Javascript</b>
+        </li>
+        <li>
+          Wenn der Header aus dem Bild heraus- bzw. herein scrolled setzen bzw.
+          entfernen wir eine <b>CSS Klasse</b> auf dem Header Element. Diese Klasse
+          wird uns ermöglichen den Header anders zu stylen (nämlich ihn <q>sticky</q> zu machen)
+          , wenn er (eigentlich) nicht mehr im Bild ist. Für das dynamische Setzen/Entfernen
+          von CSS Klassen gibt es im <b>DOM</b> entsprechende Funktionen. Und wie rufen wir die auf?
+          Genau: mit <b>Javascript</b>
+        </li>
+        <li>
+          Wenn wir den Javascript Teil implementiert haben brauchen wir im CSS
+          nur noch die Styles für den Sticky Zustand hinzufügen.
+        </li>
+      </ol>
+
+      <p>
+        Fangen wir also mit dem Javascript Code an und fügen wir folgendes <b>script</b> Tag
+        <b>am Ende</b> unseres Dokuments, aber <b>vor</b> dem abschließenden <b>body</b> und
+        <b>html</b> Tag ein.
+      </p>
+
+      <pre>
+        &lt;script&gt;
+            var body = document.body;
+            // Wir bestimmen die Position des Header Elements
+            var headerEl = document.querySelector('header');
+            var headerRect = headerEl.getBoundingClientRect();
+            var headerBottom = headerRect.bottom + document.body.scrollTop;
+            console.info('Der header endet an Position', headerBottom);
+
+            // Diese Funktion rufen wir auf, um den Header sticky zu machen
+            function makeHeaderStickyIfNecessary() {
+              var scrollTop = window.scrollY;
+              if (scrollTop > headerBottom) {
+                body.classList.add('sticky');
+                console.info('Der header ist jetzt sticky');
+              } else {
+                body.classList.remove('sticky');
+                console.info('Der header ist wieder non-sticky');
+              }
+            }
+
+            // Hier sagen wir dem Browser, dass wir an Scroll Events interessiert sind
+            window.addEventListener('scroll', function () {
+              console.info('Scroll Position ist', window.scrollY);
+              makeHeaderStickyIfNecessary();
+            })
+
+        &lt;/script&gt;
+      </pre>
+
+      <h4>Und so funktioniert's</h4>
+      <ol>
+        <li>Der Code bestimmt zuerst die Position des unteren Randes des Header Elements</li>
+        <li>Dann wird ein <b>Scroll Event Listener</b> gesetzt. Damit bekommen wir mit, wenn der Benutzer scrolled</li>
+        <li>
+          Bei jedem Scroll Event wird überprüft, ob die augenblickliche Scroll Position des Fensters <quot>größer ist</quot> als die bestimmte Position des Header Elements.
+          Wenn ja ist der Header gerade nicht sichtbar und wir setzen die Klasse <b>sticky</b> andernfalls entfernen wir die Klasse <b>sticky</b>.
+        </li>
+      </ol>
+
+      <span class="note">
+        Der Code enthält einige <b>Debugausgaben</b>. Um diese sehen zu können,
+        müsst ihr mit <em>F12</em> die <b>Developer Tools</b> eures Browsers öffnen.
+        Wenn ihr scrolled werdet ihr Ausgaben im Console Fenster sehen.
+      </span>
+
+      <p>Jetzt fügen wir die CSS Styles hinzu</p>
+
+      <pre>
+        nav {
+          display: none;
+          background-color: white;
+          padding-top: 15px;
+          border-bottom: 1px solid #eee;
+        }
+        nav a {
+          padding: 10px;
+          border: 1px solid #005ea8;
+          border-radius: 100px;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+
+        body.sticky {
+          padding-top: 100px;
+        }
+        body.sticky header {
+          visibility: hidden;
+        }
+        body.sticky nav {
+          position: fixed;
+          width: 100%;
+          height: 50px;
+          display: block;
+          text-align: center;
+          left: 0;
+          top: 0;
+          z-index: 100;
+        }
+      </pre>
+
+      <h4>Und so funktioniert's</h4>
+      <ol>
+        <li>
+          Der wesentliche Teil befindet sich in <b>body-sticky nav</b>. Hier setzen wir
+          das Navigationselement auf <b>position: fixed</b> (sobald sticky getriggered wurd) und fixieren damit seine
+          <a href="https://css-tricks.com/almanac/properties/p/position/">Position</a> am oberen Rand.
+        </li>
+        <li>Den eigentlichen Header macht <b>body.sticky header</b> dann unsichtbar</li>
+      </ol>
 
   </main>
 
@@ -724,5 +887,33 @@
       </li>
     </ul>
   </footer>
+
+  <script>
+  var body = document.body;
+  // Wir bestimmen die Position des Header Elements
+  var headerEl = document.querySelector('header');
+  var headerRect = headerEl.getBoundingClientRect();
+  var headerBottom = headerRect.bottom + document.body.scrollTop;
+  console.info('Der header endet an Position', headerBottom);
+
+  // Diese Funktion rufen wir auf, um den Header sticky zu machen
+  function makeHeaderStickyIfNecessary() {
+    var scrollTop = window.scrollY;
+    if (scrollTop > headerBottom) {
+      body.classList.add('sticky');
+      console.info('Der header ist jetzt sticky');
+    } else {
+      body.classList.remove('sticky');
+      console.info('Der header ist wieder non-sticky');
+    }
+  }
+
+  // Hier sagen wir dem Browser, dass wir an Scroll Events interessiert sind
+  window.addEventListener('scroll', function () {
+    console.info('Scroll Position ist', window.scrollY);
+    makeHeaderStickyIfNecessary();
+  })
+
+  </script>
 </body>
 </html>

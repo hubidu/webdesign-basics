@@ -21,6 +21,7 @@ x Styling images
 
 ## Where to go from here
 
+- Security (Same-Origin-Policy, XSS, CORS)
 - Responsive Webdesign
 - Tables
 - Page Speed Optimization
@@ -29,3 +30,5 @@ x Styling images
 - Flexbox
 - Javascript in Depth
 - Single Page Applications
+- Serverless Applications
+- Web Analytics
